@@ -1926,6 +1926,8 @@ namespace Dynastream.Fit
             newMesg.SetField(new Field("MinAltitude", 71, 132, 5, 500, "m", false, Type.Uint16));
             newMesg.FieldsList[fieldIndex].components.Add(new FieldComponent(127, false, 16, 5, 500)); // enhanced_min_altitude
             fieldIndex++;
+            newMesg.SetField(new Field("WorkTime", 78, 134, 1000, 0, "s", false, Type.Uint32));
+            fieldIndex++;
             newMesg.SetField(new Field("PlayerScore", 82, 132, 1, 0, "", false, Type.Uint16));
             fieldIndex++;
             newMesg.SetField(new Field("OpponentScore", 83, 132, 1, 0, "", false, Type.Uint16));

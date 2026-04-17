@@ -128,6 +128,7 @@ namespace Dynastream.Fit
             public const byte AvgLapTime = 69;
             public const byte BestLapIndex = 70;
             public const byte MinAltitude = 71;
+            public const byte WorkTime = 78;
             public const byte PlayerScore = 82;
             public const byte OpponentScore = 83;
             public const byte OpponentName = 84;
@@ -452,7 +453,34 @@ namespace Dynastream.Fit
         {
             SetFieldValue(7, 0, totalElapsedTime_, Fit.SubfieldIndexMainField);
         }
-        
+
+        ///<summary>
+        /// Retrieves the TotalElapsedTime field
+        /// Units: s
+        /// Comment: Time (includes pauses)</summary>
+        /// <returns>Returns nullable float representing the TotalElapsedTime field</returns>
+        public float? GetWorkTime()
+        {
+            Object val = GetFieldValue(78, 0, Fit.SubfieldIndexMainField);
+            if (val == null)
+            {
+                return null;
+            }
+
+            return (Convert.ToSingle(val));
+
+        }
+
+        /// <summary>
+        /// Set TotalElapsedTime field
+        /// Units: s
+        /// Comment: Time (includes pauses)</summary>
+        /// <param name="totalElapsedTime_">Nullable field value to be set</param>
+        public void SetWorkTime(float? workTime_)
+        {
+            SetFieldValue(78, 0, workTime_, Fit.SubfieldIndexMainField);
+        }
+
         ///<summary>
         /// Retrieves the TotalTimerTime field
         /// Units: s
