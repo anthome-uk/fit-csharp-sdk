@@ -159,7 +159,7 @@ namespace Dynastream.Fit
             // Compute and write the file CRC to the end of the file
             byte[] data = new byte[fitDest.Length];
             fitDest.Position = 0;
-            fitDest.Read(data, 0, data.Length);
+            fitDest.ReadExactly(data, 0, data.Length);
             ushort fileCrc = CRC.Calc16(data, data.Length);
             byte[] buffer = BitConverter.GetBytes(fileCrc);
             fitDest.Write(buffer, 0, 2);

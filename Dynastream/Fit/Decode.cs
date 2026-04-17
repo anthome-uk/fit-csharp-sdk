@@ -133,7 +133,7 @@ namespace Dynastream.Fit
                         // Need to rewind the header size because the header is part of the CRC calculation.
                         byte[] data = new byte[fileSize];
                         fitStream.Position = fitStream.Position - header.Size;
-                        fitStream.Read(data, 0, data.Length);
+                        fitStream.ReadExactly(data, 0, data.Length);
                         isValid &= (CRC.Calc16(data, data.Length) == 0x0000);
                     }
                     else
@@ -266,7 +266,7 @@ namespace Dynastream.Fit
                 {
                     byte[] data = new byte[fileSize];
                     fitStream.Position = filePosition;
-                    fitStream.Read(data, 0, data.Length);
+                    fitStream.ReadExactly(data, 0, data.Length);
                     readOK &= (CRC.Calc16(data, data.Length) == 0x0000);
                     fitStream.Position = filePosition + fileSize;
                 }
