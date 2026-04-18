@@ -2073,6 +2073,8 @@ namespace Dynastream.Fit
             fieldIndex++;
             newMesg.SetField(new Field("JumpCount", 183, 132, 1, 0, "", false, Type.Uint16));
             fieldIndex++;
+            newMesg.SetField(new Field("ExecutionScore", 185, 2, 1, 0, "percent", false, Type.Uint8));
+            fieldIndex++;
             newMesg.SetField(new Field("AvgGrit", 186, 136, 1, 0, "kGrit", false, Type.Float32));
             fieldIndex++;
             newMesg.SetField(new Field("AvgFlow", 187, 136, 1, 0, "Flow", false, Type.Float32));

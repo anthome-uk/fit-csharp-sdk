@@ -200,6 +200,7 @@ namespace Dynastream.Fit
             public const byte TotalGrit = 181;
             public const byte TotalFlow = 182;
             public const byte JumpCount = 183;
+            public const byte ExecutionScore = 185;
             public const byte AvgGrit = 186;
             public const byte AvgFlow = 187;
             public const byte WorkoutFeel = 192;
@@ -4210,12 +4211,39 @@ namespace Dynastream.Fit
         {
             SetFieldValue(183, 0, jumpCount_, Fit.SubfieldIndexMainField);
         }
+
+        ///<summary>
+        /// Retrieves the ExecutionScore field
+        /// Units: percent
+        /// Comment: Execution score for the monitoring session</summary>
+        /// <returns>Returns nullable byte representing the ExecutionScore field</returns>
+        public byte? GetExecutionScore()
+        {
+            Object val = GetFieldValue(185, 0, Fit.SubfieldIndexMainField);
+            if (val == null)
+            {
+                return null;
+            }
+
+            return (Convert.ToByte(val));
+
+        }
+
+        /// <summary>
+        /// Set ExecutionScore field
+        /// Units: percent
+        /// Comment: Execution score for the monitoring session</summary>
+        /// <param name="executionScore_">Nullable field value to be set</param>
+        public void SetExecutionScore(byte? executionScore_)
+        {
+            SetFieldValue(185, 0, executionScore_, Fit.SubfieldIndexMainField);
+        }
         
         ///<summary>
-        /// Retrieves the AvgGrit field
-        /// Units: kGrit
-        /// Comment: The grit score estimates how challenging a route could be for a cyclist in terms of time spent going over sharp turns or large grade slopes.</summary>
-        /// <returns>Returns nullable float representing the AvgGrit field</returns>
+                 /// Retrieves the AvgGrit field
+                 /// Units: kGrit
+                 /// Comment: The grit score estimates how challenging a route could be for a cyclist in terms of time spent going over sharp turns or large grade slopes.</summary>
+                 /// <returns>Returns nullable float representing the AvgGrit field</returns>
         public float? GetAvgGrit()
         {
             Object val = GetFieldValue(186, 0, Fit.SubfieldIndexMainField);
