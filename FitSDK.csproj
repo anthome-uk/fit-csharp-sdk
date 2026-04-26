@@ -1,18 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFrameworks>net10.0</TargetFrameworks>
     </PropertyGroup>
     <PropertyGroup>
-        <PackageId>Garmin.FIT.Sdk</PackageId>
-        <Version>21.200.0</Version>
-        <Authors>Garmin International, Inc.</Authors>
+        <PackageId>Orchid.Garmin.FIT.Sdk</PackageId>
+        <Authors>Garmin International, Inc.;Anthony Barclay</Authors>
         <Company>Garmin International, Inc.</Company>
-        <PackageDescription>FIT C# SDK</PackageDescription>
-        <PackageProjectUrl>https://developer.garmin.com/fit/overview/</PackageProjectUrl>
-        <PackageTags>fit fitsdk garmin</PackageTags>
-        <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageDescription>FIT C# SDK with additional fields</PackageDescription>
+		<RepositoryUrl>https://github.com/anthome-uk/fit-csharp-sdk</RepositoryUrl>
     </PropertyGroup>
 
     <ItemGroup>
